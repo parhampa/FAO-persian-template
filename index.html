@@ -1,0 +1,418 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/w3.css">
+		<style>
+
+			.schform{
+				margin-top:35px;
+				position: relative;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				transition: all 1s;
+				width: 50px;
+				height: 50px;
+				background: white;
+				box-sizing: border-box;
+				border-radius: 25px;
+				border: 4px solid white;
+				padding: 5px;
+			}
+
+			.schinput{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;;
+				height: 42.5px;
+				line-height: 30px;
+				outline: 0;
+				border: 0;
+				display: none;
+				font-size: 1em;
+				border-radius: 20px;
+				padding: 0 20px;
+			}
+
+			.faa{
+				box-sizing: border-box;
+				padding: 10px;
+				width: 42.5px;
+				height: 42.5px;
+				position: absolute;
+				top: 0;
+				right: 0;
+				border-radius: 50%;
+				color: #07051a;
+				text-align: center;
+				font-size: 1.2em;
+				transition: all 1s;
+			}
+
+			.schform:hover{
+				width: 200px;
+				cursor: pointer;
+			}
+
+			.schform:hover input{
+				display: block;
+			}
+
+			.schform:hover .fa{
+				background: #07051a;
+				color: white;
+			}
+			
+			@font-face {
+				font-family: myFirstFont;
+				src: url(css/BNazanin.woff);
+			}
+			h4{
+				font-weight:bold;
+				src: url(css/BNazanin.woff);
+				font-family: myFirstFont;
+			}
+			h3{
+				font-weight:bold;
+				src: url(css/BNazanin.woff);
+				font-family: myFirstFont;
+			}
+			h2{
+				font-weight:bold;
+				src: url(css/BNazanin.woff);
+				font-family: myFirstFont;
+			}
+			h1{
+				font-weight:bold;
+				src: url(css/BNazanin.woff);
+				font-family: myFirstFont;
+			}
+			p{
+				font-size:16px;
+				src: url(css/BNazanin.woff);
+				font-family: myFirstFont;
+			}
+			a{
+				font-weight:bold;
+				src: url(css/BNazanin.woff);
+				font-family: myFirstFont;
+			}
+			span{
+				font-weight:bold;
+				src: url(css/BNazanin.woff);
+				font-family: myFirstFont;
+			}
+			div{
+				font-weight:bold;
+				src: url(css/BNazanin.woff);
+				font-family: myFirstFont;
+			}
+			p{
+				font-weight:bold;
+				src: url(css/BNazanin.woff);
+				font-family: myFirstFont;
+			}
+			
+		</style>
+	</head>
+	<body style="direction:rtl; background-color:#f8f8f8;">
+		<header>
+			<div style="height:100px;" class="w3-row w3-green">
+				<div class="w3-half" style="direction:ltr;" id="schfrm">
+					
+					<form action="" class="schform">
+					  <input type="search" class="schinput">
+					  <i class="fa fa-search faa"></i>
+					</form>
+					
+				</div>
+
+				<div class="w3-half" id="logoplc">
+					<img src="image/flogo.png" style="width:80%; margin-top:5px; margin-right:50px;">
+				</div>
+				
+				<button class="w3-button w3-light-blue w3-xxlarge" onclick="w3_open()" style="display:none; margin-right:40%; margin-top:10px;" id="hbbtn">&#9776;</button>
+			</div>
+		</header>
+		
+		<div class="w3-bar w3-card" style="background-color:#f8f8f8; font-weight:bold;" id="mmenu">
+			<a href="#" class="w3-bar-item w3-button w3-mobile w3-right" ><br>خانه<br><br></a>
+			<a href="#" class="w3-bar-item w3-button w3-mobile w3-right"><br>اخبار<br><br></a>
+			<a href="#" class="w3-bar-item w3-button w3-mobile w3-right"><br>مقالات<br><br></a>
+			<div class="w3-dropdown-hover w3-mobile w3-right" style="text-align:right;">
+			  <button class="w3-button"><br>راه های ارتباطی <i class="fa fa-caret-down"></i></button>
+			  <div class="w3-dropdown-content w3-bar-block w3-card" style="background-color:#f8f8f8;">
+				<a href="#" class="w3-bar-item w3-button w3-mobile w3-right">ایمیل ها</a>
+				<a href="#" class="w3-bar-item w3-button w3-mobile w3-right">شماره های تماس</a>
+				<a href="#" class="w3-bar-item w3-button w3-mobile w3-right">شماره های ارسال فکس</a>
+			  </div>
+			</div>
+		</div>
+		
+		
+		
+		<div class="w3-sidebar w3-bar-block w3-animate-right" style="display:none; z-index:999; width:100%;" id="mySidebar">
+		<div style="height:150px; width:100%; text-align:center;" class="w3-blue">
+			<img src="image/rfldllogo.png" style="width:80px; margin-top:5px;">
+		</div>
+		<br>
+		<div style="text-align:center;">
+			<input type="text" name="fi" class="w3-input w3-border" placeholder="متن جستجو...">
+			<input type="button" class="w3-btn w3-green" value="جستجو" style="width:100%;">
+		</div>
+		<button class="w3-bar-item w3-button w3-large w3-red" onclick="w3_close()"><B>&times; بستن</B></button>
+		  <a href="#" class="w3-bar-item w3-button w3-light-gray w3-border">خانه</a>
+		  <a href="#" class="w3-bar-item w3-button w3-light-gray w3-border">لینک ها</a>
+		  <div class="w3-dropdown-hover">
+			<button class="w3-button w3-light-gray w3-border">ارتباط با ما
+			  <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="w3-dropdown-content w3-bar-block">
+			  <a href="#" class="w3-bar-item w3-button w3-light-gray w3-border">ایمیل ها</a>
+			  <a href="#" class="w3-bar-item w3-button w3-light-gray w3-border">آدرس ها</a>
+			</div>
+		  </div>
+		  
+		  
+		</div>
+		<div style="width:80%; margin-right:10%;" id="mainpic">
+			<img src="tmpimg/mainimg.png" style="width:100%;">
+		</div>
+		<br><br>
+		
+		<div class="w3-row" style="width:90%; margin-right:10%;" id="topnews">
+			<div class="w3-half">
+				<div style="width:100%;">
+					<img src="tmpimg/top2.jpg" style="width:78%;" id="top2pic">
+				</div>
+				<div style="width:78%; background-color: white;" id="top2txt">
+					<div style="padding:20px;">
+						<span>اخبار</span>
+						<h2>عنوان خبر شما در این قسمت قرار دارد و خلاصه آن در قسمت زیر می باشد...</h2>
+						<p>در این قسمت نیز خلاصه ای از متن خبر شما قرار دارد و جهت مشاهده ادامه مطلب می توانید بر روی این خبر کلیک نمایید. همچنین عنوان خبر نیز در بالا وجود دارد...</p>
+					</div>
+				</div>
+			</div>
+			<div class="w3-half" id="top1news" style="background-color:#0d6cac; border-left:solid; border-left-width:30px; border-left-color:#f8f8f8;">
+				<div class="w3-half" style="display:none;" id="toppic11">
+					<img src="tmpimg/top1.jpg" style="width:100%;">
+				</div>
+				<div class="w3-half">
+					<div class="w3-text-white" style="margin:20px;">
+						<span>اخبار</span>
+						<h2>عنوان خبر شما در این قسمت قرار دارد و خلاصه آن در قسمت زیر می باشد...</h2>
+						<p>در این قسمت نیز خلاصه ای از متن خبر شما قرار دارد و جهت مشاهده ادامه مطلب می توانید بر روی این خبر کلیک نمایید. همچنین عنوان خبر نیز در بالا وجود دارد...</p>
+					</div>
+				</div>
+				<div class="w3-half">
+					<img src="tmpimg/top1.jpg" style="width:100%;" id="toppic12">
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div style="text-align:center; color:#0418a9;">
+			<h5 style="font-weight:bold;">آخرین مطالب</h5>
+		</div>
+		<br><br>
+		<div class="w3-row" style="width:80%; margin-right:10%;" id="newslist1">
+			<div class="w3-third" style="padding-left:20px; padding-right:20px;">
+				<img src="tmpimg/news1.jpg" style="width:100%;">
+				<br>
+				<br>
+				<span style="font-weight:bold; color:#0418a9;">دسته بندی خبر</span>
+				<h4 style="color:#0418a9;">عنوان خبر</h4>
+				<p>در این قسمت خلاصه ای از متن خبر شما قرار می گیرد و شما می توانید متن کلیدی خود را در آن قرار دهید.</p>
+			</div>
+			<div class="w3-third" style="padding-left:20px; padding-right:20px;">
+				<img src="tmpimg/news2.jpg" style="width:100%;">
+				<br>
+				<br>
+				<span style="font-weight:bold; color:#0418a9;">دسته بندی خبر</span>
+				<h4 style="color:#0418a9;">عنوان خبر</h4>
+				<p>در این قسمت خلاصه ای از متن خبر شما قرار می گیرد و شما می توانید متن کلیدی خود را در آن قرار دهید.</p>
+			</div>
+			<div class="w3-third" style="padding-left:20px; padding-right:20px;">
+				<img src="tmpimg/news3.jpg" style="width:100%;">
+				<br>
+				<br>
+				<span style="font-weight:bold; color:#0418a9;">دسته بندی خبر</span>
+				<h4 style="color:#0418a9;">عنوان خبر</h4>
+				<p>در این قسمت خلاصه ای از متن خبر شما قرار می گیرد و شما می توانید متن کلیدی خود را در آن قرار دهید.</p>
+			</div>
+		</div>
+		<br><br>
+		<div class="w3-row" style="width:80%; margin-right:10%;" id="newslist2">
+			<div class="w3-third" style="padding-left:20px; padding-right:20px;">
+				<img src="tmpimg/news1.jpg" style="width:100%;">
+				<br>
+				<br>
+				<span style="font-weight:bold; color:#0418a9;">دسته بندی خبر</span>
+				<h4 style="color:#0418a9;">عنوان خبر</h4>
+				<p>در این قسمت خلاصه ای از متن خبر شما قرار می گیرد و شما می توانید متن کلیدی خود را در آن قرار دهید.</p>
+			</div>
+			<div class="w3-third" style="padding-left:20px; padding-right:20px;">
+				<img src="tmpimg/news2.jpg" style="width:100%;">
+				<br>
+				<br>
+				<span style="font-weight:bold; color:#0418a9;">دسته بندی خبر</span>
+				<h4 style="color:#0418a9;">عنوان خبر</h4>
+				<p>در این قسمت خلاصه ای از متن خبر شما قرار می گیرد و شما می توانید متن کلیدی خود را در آن قرار دهید.</p>
+			</div>
+			<div class="w3-third" style="padding-left:20px; padding-right:20px;">
+				<img src="tmpimg/news3.jpg" style="width:100%;">
+				<br>
+				<br>
+				<span style="font-weight:bold; color:#0418a9;">دسته بندی خبر</span>
+				<h4 style="color:#0418a9;">عنوان خبر</h4>
+				<p>در این قسمت خلاصه ای از متن خبر شما قرار می گیرد و شما می توانید متن کلیدی خود را در آن قرار دهید.</p>
+			</div>
+		</div>
+		<br>
+		<br>
+		
+		<div style="width:100%; background:white;">
+			<br>
+			<br>
+			<div style="text-align:center; color:#0418a9;">
+				<h5 style="font-weight:bold;">بخشی از خدمات ما</h5>
+			</div>
+			<div class="w3-row" style="width:80%; margin-right:10%;" id="slidepart">
+				<img src="tmpimg/slide.jpg" style="width:100%;">
+			</div>
+		</div>
+		<div style="width:100%;">
+			<div style="text-align:center; color:#0418a9;">
+				<h5 style="font-weight:bold;">درباره ما</h5>
+			</div>
+			<br>
+			<br>
+			<div class="w3-row" style="padding-left:10%; padding-right:10%;">
+				<div class="w3-third" style="text-align:center;"><img src="image/flogo-manabe.png" style="width:150px;"></div>
+				<div class="w3-third" style="text-align:center;"><img src="image/rfldllogo.png" style="width:150px;"></div>
+				<div class="w3-third">در این قسمت شما می توانید گوشه ای از خدماتی که ارائه می دهید به همراه تاریخچه ای  از فعالیت خود را ارائه بدهید. این قسمت نشان دهنده همان متن درباره ما می باشد....
+				<br>
+				<br>
+				<input type="button" class="w3-btn" style="font-size:14px; border:solid; border-radius:25px; border-color:#0418a9; border-width:1px;" value="مشاهده ادامه اطلاعات">
+				</div>
+			</div>
+			<br>
+			<br>
+		</div>
+		
+		
+		<div style="width:100%; background-color:white;">
+			<div style="text-align:center; color:#0418a9;">
+			<br>
+				<h5 style="font-weight:bold;">فهرست ارجاعات مهم</h5>
+			</div>
+			<br>
+			<br>
+			<div class="w3-row" style="padding-left:10%; padding-right:10%;">
+				<div class="w3-quarter" style="text-align:center;">
+					<b style="color:gray;">
+						شبکه های اجتماعی ما
+					</b>
+					<br>
+					<div style="font-size:24px; color:gray;">
+						<i class="fab fa-telegram"></i>
+						<i class="fab fa-whatsapp-square"></i>
+						<i class="fab fa-facebook-square"></i>
+						<i class="fab fa-invision"></i>
+					</div>
+					<br>
+					<b style="color:gray;">
+						دانلود نرم افزار موبایل
+					</b>
+					<br>
+					<br>
+					<img src="image/googleplay.jpg">
+					<p style="font-weight:bold; color:gray;">RFLDL 2019©</p>
+				</div>
+				<div class="w3-quarter" style="text-align:center; color:#0418a9;">
+					<a href="" style="text-decoration:none;">لینک شماره 1 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 2 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 3 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 4 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 5 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 6 وبسایت</a><br>
+				</div>
+				<div class="w3-quarter" style="text-align:center; color:#0418a9;">
+					<a href="" style="text-decoration:none;">لینک شماره 1 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 2 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 3 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 4 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 5 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 6 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 6 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 6 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 6 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 6 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 6 وبسایت</a><br>
+				</div>
+				<div class="w3-quarter" style="text-align:center; color:#0418a9;">
+					<a href="" style="text-decoration:none;">لینک شماره 1 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 2 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 3 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 4 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 5 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 6 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 6 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 6 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 6 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 6 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 6 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 6 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 6 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 6 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 6 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 6 وبسایت</a><br>
+					<a href="" style="text-decoration:none;">لینک شماره 6 وبسایت</a><br>
+				</div>
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+		</div>
+	</body>
+	
+	<script>
+		function w3_open() {
+		  document.getElementById("mySidebar").style.display = "block";
+		}
+
+		function w3_close() {
+		  document.getElementById("mySidebar").style.display = "none";
+		}
+	
+		function loaditems()
+		{
+			var wiwi=window.screen.availWidth;
+			if(wiwi<640)
+			{
+				document.getElementById('logoplc').style.display="none";
+				document.getElementById('mmenu').style.display="none";
+				document.getElementById('schfrm').style.display="none";
+				/////
+				document.getElementById('hbbtn').style.display="";
+				document.getElementById('mainpic').style.width="100%";
+				document.getElementById('mainpic').style.marginRight="0%";
+				
+			}
+			if(wiwi<830)
+			{
+				document.getElementById('topnews').style.width="100%";
+				document.getElementById('top2pic').style.width="100%";
+				document.getElementById('top2txt').style.width="100%";
+				document.getElementById('topnews').style.marginRight="0";
+				document.getElementById("top1news").style.borderLeftWidth = "0px";
+				document.getElementById('toppic11').style.display="";
+				document.getElementById('toppic12').style.display="none";
+			}
+		}
+		loaditems();
+	</script>
+</html>
